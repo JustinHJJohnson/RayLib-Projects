@@ -208,6 +208,7 @@ ifeq ($(PLATFORM),PLATFORM_DESKTOP)
     ifeq ($(PLATFORM_OS),WINDOWS)
         # resource file contains windows executable icon and properties
         # -Wl,--subsystem,windows hides the console window
+        # changed this so that VSCode can get stdout as hiding console window means VSCode can't get prints and such
         ifeq ($(BUILD_MODE),DEBUG)
             CFLAGS += $(RAYLIB_PATH)/src/raylib.rc.data
         else
